@@ -59,8 +59,9 @@ class ListViewController : UITableViewController
         udClient.logout { (success, errorMessage) in
             if success == true
             {
-                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
-                self.present(loginVC,animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.dismiss( animated: true )
+                }
             }
             else
             {

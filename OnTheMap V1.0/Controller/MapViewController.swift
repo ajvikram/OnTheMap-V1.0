@@ -57,8 +57,9 @@ class MapViewController : UIViewController, MKMapViewDelegate
         udClient.logout { (success, errorMessage) in
             if success
             {
-                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
-                self.present(loginVC,animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.dismiss( animated: true )
+                }
             }
             else
             {
