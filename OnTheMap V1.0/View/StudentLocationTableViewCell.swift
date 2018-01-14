@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import UIKit
+
+class StudentLocationTableViewCell : UITableViewCell
+{
+   
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var pinView: UIImageView!
+    
+    func configureTableCell (student:StudentInformation)
+    {
+        pinView.image = UIImage(named: "pin")
+        fullName.text = student.fullname
+    }
+}
+
